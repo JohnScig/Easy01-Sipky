@@ -12,27 +12,20 @@ namespace Transformer09c
         {
             while (true)
             {
-                Console.WriteLine($"You've hit for {Dart()} points.");
+                Console.WriteLine("Please input number for x-axis");
+                float x = float.Parse(Console.ReadLine());
+                Console.WriteLine("Please input number for x-axis");
+                float y = float.Parse(Console.ReadLine());
+                Console.WriteLine($"You've hit for {EvaluateDartThrow(x,y)} points.");
                 Console.ReadKey();
                 Console.Clear();
             }
         }
 
-        static int Dart()
-        {
-            Console.WriteLine("Please input number for x-axis");
-            float x = float.Parse(Console.ReadLine());
-            Console.WriteLine("Please input number for x-axis");
-            float y = float.Parse(Console.ReadLine());
-
-            int points = EvaluateDartThrow(x, y);
-
-
-            return points;
-        }
-
         static int EvaluateDartThrow(float x, float y)
         {
+
+
             float distance = (float)Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
             if (distance > 10)
             {
@@ -46,11 +39,10 @@ namespace Transformer09c
             {
                 return 5;
             }
-            else if (distance <= 1)
+            else
             {
                 return 10;
             }
-            return 0;
         }
     }
 }
